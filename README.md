@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Nine Python scripts to print GPU, node, OS, CPU, network, memory, disk, process, and SLURM details.
+Ten Python scripts to print GPU, node, OS, CPU, network, memory, disk, process, SLURM, and environment details.
 
 ## Sample Output
 
@@ -40,6 +40,7 @@ python3 memory_info.py
 python3 disk_info.py
 python3 process_info.py
 python3 slurm_info.py
+python3 env_info.py
 ```
 
 ---
@@ -425,3 +426,67 @@ Outputs JSON with combined CPU and OS information.
 | JobID | Name | User | Partition | State | Elapsed | CPUs | ReqMem | NodeList |
 |---|---|---|---|---|---|---|---|---|
 | 408484 | general_job | umushtaq | gpu-a6000 | RUNNING | 1-03:09:21 | 1 | 64G | l3icalcul07 |
+
+---
+
+## Env Info (`env_info.py`)
+
+### Python Environment
+
+| Property | Value |
+|---|---|
+| Executable | /usr/bin/python3 |
+| Version | 3.11.2 |
+| Prefix | /usr |
+| Platform | linux |
+| Virtual env | None (system Python) |
+
+### Installed Python Packages (sample)
+
+| Package | Version |
+|---|---|
+| bitsandbytes | 0.49.1 |
+| datasets | 4.0.0 |
+| gradio | 5.50.0 |
+| huggingface-hub | 0.35.3 |
+| numpy | 2.4.4 |
+| pandas | 2.3.3 |
+| peft | 0.18.1 |
+| pillow | 11.3.0 |
+| torch | (see full output) |
+| transformers | (see full output) |
+| **Total** | **150+ packages** |
+
+### Shell & User Environment
+
+| Variable | Value |
+|---|---|
+| USER | umushtaq |
+| HOME | /Utilisateurs/umushtaq |
+| SHELL | /bin/bash |
+| TERM | xterm-256color |
+| TMPDIR | /tmp/claude-1867 |
+| XDG_RUNTIME_DIR | /run/user/1867 |
+
+### PATH Entries
+
+| # | Path |
+|---|---|
+| 1 | /Utilisateurs/umushtaq/.local/bin |
+| 2 | /Utilisateurs/umushtaq/.cargo/bin |
+| 3 | /opt/easybuild/software/Anaconda3/2024.02-1/condabin |
+| 4 | /usr/local/bin |
+| 5 | /usr/bin |
+| 6 | /bin |
+
+### Python sysconfig Paths
+
+| Name | Path |
+|---|---|
+| stdlib | /usr/lib/python3.11 |
+| platstdlib | /usr/lib/python3.11 |
+| purelib | /usr/local/lib/python3.11/dist-packages |
+| platlib | /usr/local/lib/python3.11/dist-packages |
+| include | /usr/include/python3.11 |
+| scripts | /usr/local/bin |
+| data | /usr/local |
