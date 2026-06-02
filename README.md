@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Eight Python scripts to print GPU, node, OS, CPU, network, memory, disk, and process details.
+Nine Python scripts to print GPU, node, OS, CPU, network, memory, disk, process, and SLURM details.
 
 ## Sample Output
 
@@ -39,6 +39,7 @@ python3 network_info.py
 python3 memory_info.py
 python3 disk_info.py
 python3 process_info.py
+python3 slurm_info.py
 ```
 
 ---
@@ -366,3 +367,61 @@ Outputs JSON with combined CPU and OS information.
 | 2809728 | node | 41 |
 | 2801665 | node | 40 |
 | 2801561 | node | 35 |
+
+---
+
+## SLURM Info (`slurm_info.py`)
+
+### Cluster Info
+
+| Property | Value |
+|---|---|
+| SLURM Version | slurm 25.05.2 |
+| ClusterName | l3icalcul |
+| MaxArraySize | 100000 |
+| MaxJobCount | 10000 |
+| SchedulerType | sched/backfill |
+| SelectType | select/cons_tres |
+
+### Partitions
+
+| Partition | Avail | Time Limit | Nodes | State | CPUs (A/I/O/T) |
+|---|---|---|---|---|---|
+| gpu-3090 | up | infinite | 1 | mixed | 16/88/0/104 |
+| gpu-2080ti | up | infinite | 2 | mixed | 24/32/0/56 |
+| gpu-a40 | up | infinite | 1 | mixed | 64/48/0/112 |
+| gpu-a6000 | up | infinite | 1 | mixed | 34/94/0/128 |
+| gpu-h100 | up | infinite | 1 | mixed | 112/144/0/256 |
+| cpu* | up | infinite | 7 | mixed | 266/502/0/768 |
+
+### Nodes
+
+| Node | State | CPUs | Memory | GRES | Features |
+|---|---|---|---|---|---|
+| l3icalcul01 | mixed | 28 | 128485 MB | gpu:2080ti:3 | gpu,gpu_2080ti,cpu |
+| l3icalcul05 | mixed | 112 | 257642 MB | gpu:a40:10 | gpu,gpu_a40,cpu |
+| l3icalcul07 | mixed | 128 | 1031866 MB | gpu:a6000:7 | gpu,gpu_a6000,cpu |
+| l3icalcul10 | mixed | 256 | 1031744 MB | gpu:h100:8 | gpu,gpu_h100,cpu |
+| l3itransnet | mixed | 104 | 257557 MB | gpu:3090:1 | gpu,gpu_3090,cpu |
+
+### Job Queue
+
+| Property | Value |
+|---|---|
+| Total Jobs | 26 |
+| Running | 20 |
+| Pending | 6 |
+
+| JobID | Name | User | State | Time | Partition |
+|---|---|---|---|---|---|
+| 408484 | general_job | umushtaq | RUNNING | 1-03:09:21 | gpu-a6000 |
+| 407855 | sd3 | ksaly01 | RUNNING | 5-10:40:39 | gpu-a6000 |
+| 408523 | fl_benchmark | abellach | RUNNING | 5:32:03 | gpu-a6000 |
+| 408534 | bash | nchatt01 | RUNNING | 3:35:35 | gpu-a40 |
+| 408420 | film-full | msakkari | PENDING | 0:00 | gpu-a40 |
+
+### Recent Jobs (sacct — last 24h)
+
+| JobID | Name | User | Partition | State | Elapsed | CPUs | ReqMem | NodeList |
+|---|---|---|---|---|---|---|---|---|
+| 408484 | general_job | umushtaq | gpu-a6000 | RUNNING | 1-03:09:21 | 1 | 64G | l3icalcul07 |
