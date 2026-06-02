@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Seven Python scripts to print GPU, node, OS, CPU, network, memory, and disk details.
+Eight Python scripts to print GPU, node, OS, CPU, network, memory, disk, and process details.
 
 ## Sample Output
 
@@ -38,6 +38,7 @@ python3 cpu_details.py
 python3 network_info.py
 python3 memory_info.py
 python3 disk_info.py
+python3 process_info.py
 ```
 
 ---
@@ -312,3 +313,56 @@ Outputs JSON with combined CPU and OS information.
 |---|---|---|---|---|
 | / | 234,332,160 | 609,653 | 233,722,507 | 0.3% |
 | /boot/efi | 0 | 0 | 0 | 0.0% |
+
+---
+
+## Process Info (`process_info.py`)
+
+### Process Summary
+
+| Status | Count |
+|---|---|
+| sleeping | 1031 |
+| idle | 329 |
+| disk-sleep | 122 |
+| running | 3 |
+| zombie | 7 |
+| **Total** | **1492** |
+
+### Top 10 by CPU Usage
+
+| PID | Name | CPU% | Threads | Status | Elapsed |
+|---|---|---|---|---|---|
+| 1 | systemd | 0.0% | 1 | sleeping | 8241:33:16 |
+| 2 | kthreadd | 0.0% | 1 | sleeping | 8241:33:16 |
+| 3 | rcu_gp | 0.0% | 1 | idle | 8241:33:16 |
+
+### Top 10 by Memory Usage
+
+| PID | Name | User | RSS | VMS | Mem% |
+|---|---|---|---|---|---|
+| 1707904 | remote-dev-server | engouan | 3.78 GB | 8.16 GB | 1.50% |
+| 498154 | mariadbd | mysql | 3.25 GB | 125.85 GB | 1.29% |
+| 4181861 | node | tnguye28 | 2.58 GB | 13.60 GB | 1.03% |
+| 1148739 | slurmctld | slurm | 1.01 GB | 25.71 GB | 0.40% |
+| 2774158 | node | nchatt01 | 0.91 GB | 23.99 GB | 0.36% |
+
+### Top 10 by Thread Count
+
+| PID | Name | User | Threads |
+|---|---|---|---|
+| 1707904 | remote-dev-server | engouan | 184 |
+| 1148739 | slurmctld | slurm | 147 |
+| 1148564 | slurmdbd | slurm | 134 |
+| 2711942 | python | ethomas | 131 |
+| 1148869 | slurmscriptd | slurm | 130 |
+
+### Top 10 by Open File Descriptors
+
+| PID | Name | Open FDs |
+|---|---|---|
+| 2801700 | node | 66 |
+| 2802818 | node | 48 |
+| 2809728 | node | 41 |
+| 2801665 | node | 40 |
+| 2801561 | node | 35 |
