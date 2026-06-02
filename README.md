@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Two Python scripts to print GPU and node details.
+Three Python scripts to print GPU, node, and OS details.
 
 ## Sample Output
 
@@ -33,6 +33,7 @@ Two Python scripts to print GPU and node details.
 ```bash
 python3 gpu_details.py
 python3 node_info.py
+python3 os_info.py
 ```
 
 ---
@@ -91,3 +92,58 @@ python3 node_info.py
 | Variable | Value |
 |---|---|
 | SLURM_JOB_ID | 396743 |
+
+---
+
+## OS Info (`os_info.py`)
+
+### OS Identity
+
+| Property | Value |
+|---|---|
+| System | Linux |
+| Release | 6.1.0-20-amd64 |
+| Version | #1 SMP PREEMPT_DYNAMIC Debian 6.1.85-1 (2024-04-11) |
+| Platform | Linux-6.1.0-20-amd64-x86_64-with-glibc2.36 |
+| Architecture | x86_64 / 64bit |
+| Distro | Debian GNU/Linux 12 (bookworm) |
+| Distro ID | debian |
+| Distro Version | 12 |
+
+### Kernel
+
+| Property | Value |
+|---|---|
+| Kernel Release | 6.1.0-20-amd64 |
+| Kernel Version | #1 SMP PREEMPT_DYNAMIC Debian 6.1.85-1 (2024-04-11) |
+
+### Uptime & Boot
+
+| Property | Value |
+|---|---|
+| Boot Time | 2025-06-24 11:23:33 |
+| Uptime | 343d 9h 20m |
+
+### Python Runtime
+
+| Property | Value |
+|---|---|
+| Version | 3.11.2 |
+| Implementation | CPython |
+| Executable | /usr/bin/python3 |
+| Prefix | /usr |
+
+### Locale & Timezone
+
+| Property | Value |
+|---|---|
+| Timezone | CEST |
+| LANG | fr_FR.UTF-8 |
+
+### Key Environment Variables
+
+| Variable | Value |
+|---|---|
+| HOME | /Utilisateurs/umushtaq |
+| USER | umushtaq |
+| SHELL | /bin/bash |
