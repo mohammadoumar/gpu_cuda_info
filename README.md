@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Six Python scripts to print GPU, node, OS, CPU, network, and memory details.
+Seven Python scripts to print GPU, node, OS, CPU, network, memory, and disk details.
 
 ## Sample Output
 
@@ -37,6 +37,7 @@ python3 os_info.py
 python3 cpu_details.py
 python3 network_info.py
 python3 memory_info.py
+python3 disk_info.py
 ```
 
 ---
@@ -274,3 +275,40 @@ Outputs JSON with combined CPU and OS information.
 | 4181861 | node | 2.58 GB | 13.60 GB | 1.03% |
 | 1148739 | slurmctld | 1.01 GB | 25.71 GB | 0.40% |
 | 2774158 | node | 0.91 GB | 23.99 GB | 0.36% |
+
+---
+
+## Disk Info (`disk_info.py`)
+
+### Disk Partitions & Usage
+
+| Mountpoint | Device | Filesystem | Total | Used | Free |
+|---|---|---|---|---|---|
+| / | /dev/nvme0n1p2 | ext4 | 3518.32 GB | 89.77 GB (2.7%) | 3249.76 GB |
+| /boot/efi | /dev/nvme0n1p1 | vfat | 0.50 GB | 0.01 GB (1.1%) | 0.49 GB |
+
+### Disk I/O Counters
+
+| Device | Reads | Writes | Read Bytes | Write Bytes | Read Time | Write Time |
+|---|---|---|---|---|---|---|
+| nvme0n1 | 8,890,160 | 79,415,909 | 537.75 GB | 1522.88 GB | 901118 ms | 15558411 ms |
+| nvme0n1p2 | 8,861,917 | 79,325,671 | 537.10 GB | 1520.08 GB | 899120 ms | 15544763 ms |
+| nvme0n1p3 | 26,813 | 90,236 | 0.61 GB | 2.81 GB | 1559 ms | 13648 ms |
+
+### Block Devices (lsblk)
+
+| Name | Size | Type | Filesystem | Mountpoint | Model | Rotational |
+|---|---|---|---|---|---|---|
+| sda | 7T | disk | | | KINGSTON SEDC600M7680G | No |
+| sdb | 7T | disk | | | KINGSTON SEDC450R7680G | No |
+| nvme0n1 | 3.5T | disk | | | SAMSUNG MZQL23T8HCLS | No |
+| nvme0n1p1 | 512M | part | vfat | /boot/efi | | No |
+| nvme0n1p2 | 3.5T | part | ext4 | / | | No |
+| nvme0n1p3 | 977M | part | swap | [SWAP] | | No |
+
+### Inode Usage
+
+| Mountpoint | Total Inodes | Used | Free | Use% |
+|---|---|---|---|---|
+| / | 234,332,160 | 609,653 | 233,722,507 | 0.3% |
+| /boot/efi | 0 | 0 | 0 | 0.0% |
