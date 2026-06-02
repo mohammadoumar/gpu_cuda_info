@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Four Python scripts to print GPU, node, OS, and CPU details.
+Five Python scripts to print GPU, node, OS, CPU, and network details.
 
 ## Sample Output
 
@@ -35,6 +35,7 @@ python3 gpu_details.py
 python3 node_info.py
 python3 os_info.py
 python3 cpu_details.py
+python3 network_info.py
 ```
 
 ---
@@ -178,3 +179,48 @@ Outputs JSON with combined CPU and OS information.
 | Platform | Linux-6.1.0-20-amd64-x86_64-with-glibc2.36 |
 | Architecture | 64bit / ELF |
 | Python Version | 3.11.2 |
+
+---
+
+## Network Info (`network_info.py`)
+
+### Hostname
+
+| Property | Value |
+|---|---|
+| Hostname | l3icalculmaster |
+| FQDN | l3icalculmaster.univ-lr.fr |
+| Primary IP | 10.4.130.6 |
+
+### Network Interfaces
+
+| Interface | Status | Speed | MTU | IPv4 | MAC |
+|---|---|---|---|---|---|
+| enp67s0f0 | UP | 1000 Mbps | 1500 | 10.4.130.6/255.255.0.0 | 3c:ec:ef:f9:95:e8 |
+| enp67s0f1 | UP | 1000 Mbps | 1500 | 192.168.0.1/255.255.255.0 | 3c:ec:ef:f9:95:e9 |
+| lo | UP | N/A | 65536 | 127.0.0.1/255.0.0.0 | 00:00:00:00:00:00 |
+
+### Network I/O Counters
+
+| Interface | Bytes Sent | Bytes Recv | Pkts Sent | Pkts Recv | Errs In | Errs Out |
+|---|---|---|---|---|---|---|
+| enp67s0f0 | 3,775,527,741,641 | 6,758,471,169,048 | 4,401,557,168 | 6,012,594,859 | 18666 | 0 |
+| enp67s0f1 | 25,962,780,236,127 | 31,616,089,289,454 | 37,548,240,716 | 38,615,203,382 | 0 | 0 |
+| lo | 1,406,378,783,656 | 1,406,378,783,656 | 1,561,856,982 | 1,561,856,982 | 0 | 0 |
+
+### Active TCP Connections
+
+| Property | Value |
+|---|---|
+| Established | 74 |
+| Listening | 79 |
+
+#### Listening Ports (sample)
+
+| Local Address | PID |
+|---|---|
+| 0.0.0.0:22 | N/A |
+| 0.0.0.0:25 | N/A |
+| 0.0.0.0:80 | N/A |
+| 127.0.0.1:3306 | N/A |
+| 0.0.0.0:6817 | N/A |
