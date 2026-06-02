@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Five Python scripts to print GPU, node, OS, CPU, and network details.
+Six Python scripts to print GPU, node, OS, CPU, network, and memory details.
 
 ## Sample Output
 
@@ -36,6 +36,7 @@ python3 node_info.py
 python3 os_info.py
 python3 cpu_details.py
 python3 network_info.py
+python3 memory_info.py
 ```
 
 ---
@@ -224,3 +225,52 @@ Outputs JSON with combined CPU and OS information.
 | 0.0.0.0:80 | N/A |
 | 127.0.0.1:3306 | N/A |
 | 0.0.0.0:6817 | N/A |
+
+---
+
+## Memory Info (`memory_info.py`)
+
+### Virtual Memory (RAM)
+
+| Property | Value |
+|---|---|
+| Total | 251.55 GB |
+| Available | 221.08 GB |
+| Used | 30.48 GB (12.1%) |
+| Free | 7.73 GB |
+| Cached | 214.94 GB |
+| Buffers | 0.62 GB |
+| Shared | 0.02 GB |
+
+### Swap Memory
+
+| Property | Value |
+|---|---|
+| Total | 0.95 GB |
+| Used | 0.95 GB (100.0%) |
+| Free | 0.00 GB |
+| Swapped In | 0.61 GB |
+| Swapped Out | 2.81 GB |
+
+### Kernel Memory Breakdown (/proc/meminfo)
+
+| Field | Value (GB) |
+|---|---|
+| MemTotal | 251.55 GB |
+| MemAvailable | 221.08 GB |
+| Active | 93.39 GB |
+| Inactive | 120.89 GB |
+| AnonPages | 23.49 GB |
+| Cached | 189.74 GB |
+| Slab | 28.07 GB |
+| KReclaimable | 25.21 GB |
+
+### Top 10 Processes by Memory Usage
+
+| PID | Name | RSS | VMS | Mem% |
+|---|---|---|---|---|
+| 1707904 | remote-dev-server | 3.78 GB | 8.16 GB | 1.50% |
+| 498154 | mariadbd | 3.25 GB | 125.85 GB | 1.29% |
+| 4181861 | node | 2.58 GB | 13.60 GB | 1.03% |
+| 1148739 | slurmctld | 1.01 GB | 25.71 GB | 0.40% |
+| 2774158 | node | 0.91 GB | 23.99 GB | 0.36% |
