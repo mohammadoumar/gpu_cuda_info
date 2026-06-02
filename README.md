@@ -1,6 +1,6 @@
 # GPU CUDA Info
 
-Three Python scripts to print GPU, node, and OS details.
+Four Python scripts to print GPU, node, OS, and CPU details.
 
 ## Sample Output
 
@@ -34,6 +34,7 @@ Three Python scripts to print GPU, node, and OS details.
 python3 gpu_details.py
 python3 node_info.py
 python3 os_info.py
+python3 cpu_details.py
 ```
 
 ---
@@ -147,3 +148,33 @@ python3 os_info.py
 | HOME | /Utilisateurs/umushtaq |
 | USER | umushtaq |
 | SHELL | /bin/bash |
+
+---
+
+## CPU Details (`cpu_details.py`)
+
+Outputs JSON with combined CPU and OS information.
+
+### CPU
+
+| Property | Value |
+|---|---|
+| Model | AMD EPYC 7513 32-Core Processor |
+| Vendor | AuthenticAMD |
+| Physical Cores | 64 |
+| Logical Cores | 64 |
+| Max Frequency | 2600.0 MHz |
+| Min Frequency | 1500.0 MHz |
+| Current Frequency | 2086.32 MHz |
+
+### OS
+
+| Property | Value |
+|---|---|
+| System | Linux |
+| Node | l3icalculmaster |
+| Release | 6.1.0-20-amd64 |
+| Version | #1 SMP PREEMPT_DYNAMIC Debian 6.1.85-1 (2024-04-11) |
+| Platform | Linux-6.1.0-20-amd64-x86_64-with-glibc2.36 |
+| Architecture | 64bit / ELF |
+| Python Version | 3.11.2 |
